@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/ Стили для хэдера */
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header form {
+    float: right;
+}
+
+.header button {
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header button:hover {
+    background-color: #c82333;
+}

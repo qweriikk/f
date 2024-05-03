@@ -1,0 +1,16 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Logged out successfully</h2>
+        <p>Вы успешно вышли</p>
+        <p>Хотите <a href="{% url 'login' %}">войти</a> еще раз?</p>
+    </div>
+</body>
+</html>

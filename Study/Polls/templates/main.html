@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Основная страница</h1>
+            {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="button">Выйти</button>
+            </form>
+            {% else %}
+            <a href="{% url 'login' %}" class="button">Login</a>
+            <a href="{% url 'register' %}" class="button">Register</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Последние посты</h2>
+        {% if articles %}
+        <ul>
+            {% for article in articles %}
+            <li>
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.content }}</p>
+                <p>Автор: {{ article.author }}</p>
+                <p>Дата публикации: {{ article.created_at }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Нет постов</p>
+        {% endif %}
+    </div>
+</body>
+</html>
